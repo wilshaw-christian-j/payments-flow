@@ -1,10 +1,17 @@
 import React from "react";
+import Google,{sendDataToGoogle} from './Google'
 
-export default function PayPal(amount,user) {
+function writeData(data){
+  Google();
+  const dataToSend = { FirstName:data.fName, LastName:data.lName, Email:data.email};
+  sendDataToGoogle(dataToSend);
+};
+
+export default function PayPal({amount,user}) {
   const [paid, setPaid] = React.useState(false);
   const [error, setError] = React.useState(null);
   const paypalRef = React.useRef();
-  console.log(user);
+  writeData(user);
   console.log(user);
   // To show PayPal buttons once the component loads
   React.useEffect(() => {
