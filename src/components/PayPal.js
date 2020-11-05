@@ -12,7 +12,6 @@ export default function PayPal({amount,user}) {
   const [error, setError] = React.useState(null);
   const paypalRef = React.useRef();
   writeData(user);
-  console.log(user);
   // To show PayPal buttons once the component loads
   React.useEffect(() => {
     window.paypal
