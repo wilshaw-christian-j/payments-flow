@@ -7,7 +7,7 @@ import { Form, Radio, Checkbox } from "semantic-ui-react";
 export default function App(){
     const [checkOutType, setCheckOutType] = React.useState("PayPal");
     const [totalPrice, setProductPrice] = React.useState(0.00);
-
+    const [userState, setUserState] = React.useState({ fName: "", lName: "",email:"" })
     return (
       <div className="App">
         <header className="App-header">
@@ -16,7 +16,7 @@ export default function App(){
             <h1>Shopping Cart</h1>
             <hr noshade />
             <h2>Billing Info:</h2>
-            <BillingInfo />
+            <BillingInfo setUserState={setUserState}/>
             <hr noshade />
             <h2>Your Order:</h2>
             <Form.Group inline>
@@ -34,8 +34,8 @@ export default function App(){
              </Form.Group>
               <div className="payment-div">
               <h4>Total Amount in AUD :  ${totalPrice} 😃</h4>
-              {checkOutType === "PayPal" && totalPrice > 0 ? <PayPal amount={Number(totalPrice)}/> : null}
-              {checkOutType === "CreditCard" && totalPrice > 0 ? <Stripe amount={Number(totalPrice)}/> : null}
+              {checkOutType === "PayPal" && totalPrice > 0 ? <PayPal amount={Number(totalPrice)} user={userState}/> : null}
+              {checkOutType === "CreditCard" && totalPrice > 0 ? <Stripe amount={Number(totalPrice)} user={userState}/> : null}
               </div>
             </div>
           }

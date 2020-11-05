@@ -1,29 +1,19 @@
 import React from 'react';
-import axios from 'axios';
+import Google,{sendDataToGoogle} from './Google'
 import StripeCheckout from 'react-stripe-checkout';
 
-function successPayment(data){
-    console.log('Payment Successful');
-  };
-  
-  function errorPayment(data) {
-    console.log('Payment Error');
-  };
-function onToken(token){
-
-  const spreadsheetId = '1HwOLM0gO6CGa9NXcokUXYimgh0xHfEkODSIA-bGtYDQ';
-  const data = [["FirstName", "LastName","Email"], ["John", "Doe","john@doe.com"]];
-
-// 4. Send data with a POST request
-const baseUrl = "https://pushtogsheet.herokuapp.com";
-const query = `valueInputOption=RAW&pizzly_pkey=pope8Qy8qfYyppnHRMgLMpQ8MuEUKDGeyhfGCj`;
-const url = new URL(`/proxy/google-sheets/${spreadsheetId}/values/A1:append?${query}`, baseUrl);
-  axios.post(url.href, JSON.stringify({ values: data }),  {headers: { 'Pizzly-Auth-Id': 'f01af310-1d96-11eb-994e-491ad237911a',"Access-Control-Allow-Origin": "origin" }})
-    .then(successPayment)
-    .catch(errorPayment);
+function writeData(data){
+  Google();
+  const dataToSend = { FirstName:data.fName, LastName:data.lName, Email:data.email};
+  sendDataToGoogle(dataToSend);
 };
 
-export default function Stripe(data) {
+function onToken(token){
+ 
+};
+
+export default function Stripe({data,user}) {
+  writeData(user);
   const amnt = Number(data.amount*100); //do this to get the correct value;
     return (
         <StripeCheckout

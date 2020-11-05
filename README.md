@@ -27,10 +27,11 @@ Modules and Libraries Used:
  - Stripe
  
  The components are composed into a workflow in APP.js
+## Hosting 
+- https://wilshaw-christian-j.github.io/payments-flow/
 
 ## Improvements
 - The application is not able to write to the googlesheet as required, given more time I would write a service to handle this.
-- The application is not hosted, given more time I would have hosted the app.
  
 ## Testing Notes
 Paypal credentials for purchasing throuh paypal
@@ -43,3 +44,6 @@ Stripe card details for credit card purchases.
 - card number: 4242 4242 4242 4242
 - cvc:123
 - date:12/22
+
+## Reference 
+- Send data to gsuite - https://medium.com/@mheavers/storing-form-data-from-a-website-in-google-spreadsheets-using-javascript-react-a15aeb9143cb
