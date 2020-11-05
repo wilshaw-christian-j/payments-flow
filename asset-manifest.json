@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/payments-flow/static/js/main.64d7cc5a.chunk.js",
+    "main.js.map": "/payments-flow/static/js/main.64d7cc5a.chunk.js.map",
+    "runtime-main.js": "/payments-flow/static/js/runtime-main.79ddc764.js",
+    "runtime-main.js.map": "/payments-flow/static/js/runtime-main.79ddc764.js.map",
+    "static/js/2.c010d770.chunk.js": "/payments-flow/static/js/2.c010d770.chunk.js",
+    "static/js/2.c010d770.chunk.js.map": "/payments-flow/static/js/2.c010d770.chunk.js.map",
+    "index.html": "/payments-flow/index.html",
+    "precache-manifest.47c1e867e30cd48208fe8dccabf145b6.js": "/payments-flow/precache-manifest.47c1e867e30cd48208fe8dccabf145b6.js",
+    "service-worker.js": "/payments-flow/service-worker.js",
+    "static/js/2.c010d770.chunk.js.LICENSE.txt": "/payments-flow/static/js/2.c010d770.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.79ddc764.js",
+    "static/js/2.c010d770.chunk.js",
+    "static/js/main.64d7cc5a.chunk.js"
+  ]
+}
