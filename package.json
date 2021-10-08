@@ -16,7 +16,7 @@
     "react-scripts": "3.4.3",
     "semantic-ui-react": "^2.0.1",
     "react-stripe-checkout": "^2.6.3",
-    "react-hook-form": "^6.10.1"
+    "react-hook-form": "^6.15.8"
   },
   "scripts": {
     "start": "react-scripts start",
